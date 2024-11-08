@@ -15,7 +15,7 @@ function LeadForm() {
     setEnrichedData(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/enrich', {
+      const response = await axios.post('https://company-enrich-task.onrender.com/api/enrich', {
         company_name: companyName,
         website: website
       });
