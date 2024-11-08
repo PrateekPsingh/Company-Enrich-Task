@@ -7,6 +7,12 @@ app = Flask(__name__)
 CORS(app)  
 
 
+@app.before_request
+def set_headers():
+    
+    request.headers["Cross-Origin-Opener-Policy"] = "same-origin-allow-popups"
+    request.headers["Cross-Origin-Embedder-Policy"] = "require-corp"
+
 PDL_API_URL = "https://api.peopledatalabs.com/v5/company/enrich"
 
 
